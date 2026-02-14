@@ -1,3 +1,4 @@
+// Scroll animation
 window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
@@ -10,11 +11,40 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Trigger animation on load for first section
+// Fade in hero name on load
 window.addEventListener('load', function() {
-    const firstSection = document.querySelector('.section');
-    if(firstSection){
-        firstSection.style.opacity = "1";
-        firstSection.style.transform = "translateY(0)";
-    }
+    const hero = document.querySelector('.fade-in');
+    hero.style.opacity = "1";
+    hero.style.transform = "translateY(0)";
 });
+
+// Typing effect
+const texts = [
+    "Architecting Ideas in Strategy",
+    "Consumer Behaviour Research",
+    "Digital Management Thought Leadership"
+];
+
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+function type() {
+    if (count === texts.length) {
+        count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector('.typing').textContent = letter;
+    if (letter.length === currentText.length) {
+        setTimeout(() => {
+            index = 0;
+            count++;
+        }, 1500);
+    }
+    setTimeout(type, 80);
+}
+
+type();
