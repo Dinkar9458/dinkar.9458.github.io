@@ -37,9 +37,21 @@ header {
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 60px;
     margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
 }
+
+.typing {
+    font-weight: 300;
+    margin: 20px 0;
+    font-size: 22px;
+    min-height: 30px;
+    color: #c084fc;
+}
+
 
 .hero h2 {
     font-weight: 300;
@@ -51,3 +63,4 @@ header {
     padding: 12px 25px;
     color: white;
     text
+
