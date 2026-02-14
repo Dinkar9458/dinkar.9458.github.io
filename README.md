@@ -1,2 +1,2 @@
-# dinkarjoshii-github.io
-Educator
+# dinkar9458.github.io
+
